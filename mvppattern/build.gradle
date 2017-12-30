@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 
 ext {
     support_lib_version = '27.0.2'
+    retrofit = '2.3.0'
 }
 
 repositories {
