@@ -7,12 +7,19 @@
 
 ```Groovy
 
+ext {
+    mvp_starter = '0.0.7'
+}
+
 repositories {
     maven {
         url  "https://dl.bintray.com/tehras/maven" 
     }
 }
       
-compile 'com.github.tehras:mvppattern:0.0.7'
+dependencies {    
+    implementation "com.github.tehras:mvppattern:$mvp_starter"
+}
 
+apply from: "https://raw.githubusercontent.com/tehras/mvp_pattern/$mvp_starter/dependencies.gradle"
 ```
