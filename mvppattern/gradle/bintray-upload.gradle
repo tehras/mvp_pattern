@@ -54,7 +54,57 @@ bintray {
             desc = libraryDescription
             gpg {
                 sign = true //Determines whether to GPG sign the files. The default is false
-                passphrase = properties != null ? properties.getProperty('bintray.gpg.password') : System.env.bintray_gpg_password
+                passphrase = "-----BEGIN PGP PUBLIC KEY BLOCK-----\n" +
+                        "\n" +
+                        "mQINBFeib3EBEAC582LX53Ocnhb1aFgoovWhmXR/3++5kSGoxiGPh8GuGAaOaUCl\n" +
+                        "YyLZFyT/BlwLnVC5LCOsAfxh+Wv3cvNJsxTiPK0g1fjyaAPNrOs7jp1kUZbxE3Xv\n" +
+                        "egVLO8cdRP7FeiSc/yQS+z6VVUd2+TFSC91g3+IP6clpIfjC3UW6rt6OohOl3Qpe\n" +
+                        "lS6vMTYn/13CUb1ZWpRD8qBFXsS1wSmqJadFPmbmUh5MNjiRXgLIncth+uAibt8Y\n" +
+                        "d1DfnKrcU/3Mv9j6b73cXVzKlMWHSWfVp9BV6tMH6LG5K3XdpqsA990tuFP9/rUQ\n" +
+                        "f0xgisNK0oV744KVFll3/cTnSs8e1/I+2WnbGnd1zZPJDGEgvmg1ttg1UW+movib\n" +
+                        "FQdDGx37SIcIsqT974pZKdLCV1Y1vhzNNCM9ZF4bdtyOs72tUDAghZrA1xpDqrEl\n" +
+                        "IjPM4xi2Txi/pCyrA2MouYV1J11ja0MWr7GFmpfHsTjPc18KQ1ESqstG9kmJ5nG1\n" +
+                        "/2u1uqu4DQwsELZljKYA8k77WnEZkQp7f+TH9s0+T70oT/ZnsMhtGkAXKzklEYgv\n" +
+                        "O+mgKgW3RyS81jTiJ2dCKXhYtJKveLciH/DdRDGrWwXxUii8/SVszLJKH0YYuW3i\n" +
+                        "PUpIyLw9dBu0M90JSh8c0GjsLQv5/9e+0qRPtkn/im0XSthHlXay9uZvDQARAQAB\n" +
+                        "tCJUYXJhcyBLb3Noa2luIDx0a29zaGtpbkBnbWFpbC5jb20+iQI9BBMBCgAnBQJX\n" +
+                        "om9xAhsDBQkHhh+ABQsJCAcDBRUKCQgLBRYCAwEAAh4BAheAAAoJELx+U81kjMfR\n" +
+                        "U0QQAK9tKi4d8XBlnS2klUmgr6iO+G1amRzjnOAyGrFt5FOJ6yA2WfH+81egtxCV\n" +
+                        "yY2gGG2S+7sr+LDKKZ3crD5geCnCfaQP2Uy6T0GbBBx6u+9hcZdYnndjgcU2xiNc\n" +
+                        "ByBkk0pJ5peykptnKEntLVLilyChdNd5q8do/ZM18Ov396iYsLsKndoeSkW6IZdN\n" +
+                        "xcCjLM+Xcqh8HeTj86A6EE0NK5sdhAU5nq15vZf49POWGIGQuT8Hqa5/Bn/IpnUw\n" +
+                        "jteX5nk97DsMv6XToZWK/DnWxGIiicG6fXfao3VXccMeipac7aLfsZU6m/QvQgar\n" +
+                        "PymuFZd3Mnlci6G6UFiNxFlnkWf74TmtsOK8DmUr+J1jqYfWNT45w7NDqrfp9ef4\n" +
+                        "V6jZfl0yyugJMTlCzoth2tpY0F0z3BKg0ve1TF8M0mYsyb0YDWLhM+8vrsrug8AK\n" +
+                        "cb0RtsfxLdECnwjKFeCqCdR2wZgx3jzq2fjyWDHlY6Co9R/edZqEkDcFLvgd3PwQ\n" +
+                        "AsOtwgHi6trHS3JBP28NIdLec3xyK+1dfV9iVpcZ7em7zclhq72ROxmzwLwk00jj\n" +
+                        "XeAf7FAccGBTPyOvbB7p4tntQHEX5AYYkvMS+/GIgkEYzHAOeGRCO5CcsFlWNVF7\n" +
+                        "QxB6UVEc88l7RyITPpcM0mifZl+WPu0gNQ725mcF2FObD5w0uQINBFeib3EBEADa\n" +
+                        "hwu9ZvztrsQ4iBHvpUVFQfSgHA2Be/svXcMT9gEkiH2+AhTOfIYbZ5Ux6YS6U4IS\n" +
+                        "aiKh+pJxYouOB5QfktHov5oYUE6pV6wEL6P9OwgVftDWz4mbdNUk/BIJHdE1JaXD\n" +
+                        "F3ey2/sd77+axd8+v5PJjABXgh2AiMn6IYP3P9W/ZAajdNppduFnEqfq5slQsTGz\n" +
+                        "IUs1IRc0+fWFzkg7a5EZf+ZVdkZiUqbFumbme/+i/8y/eHQ9iufaYJB6eWuohTUb\n" +
+                        "r5tHBcerBoPrpr4ITwYlRa4WA5/ZZ3qOJpjtNgm0XzP3AXbGJHbRkNqCurTvFg6k\n" +
+                        "fmReLgwl9ZLWMVlgNRk109cwVpGYNOPWWOuBWCg5/rr04h2NhuIIy4x/p9islJCu\n" +
+                        "ap4Q9wVkOkIyvUcYs7r7xGx4h2JQogb46MVLwkOIEOefBYGbksWz150MYLwWp8Ia\n" +
+                        "rLsAe/8Koo07OstrkzdpPK5nEV7dHhtrgrr584hDi3Y+nQENm6McpmV+g5Neit/a\n" +
+                        "/DevP7Bzl70qPhjjBCOd0Ds1bPaDtoSm0Z0Y2sjr3kWQJaZoLmMBqA7pgEDeeCRU\n" +
+                        "2auevZy2gmShMHS4mSjobFs6bKdc6SqOXBX7R/ZM/xjREJ8KJjH/kM0y8G/5rhxG\n" +
+                        "RHViWKvWrwrYAtxFfJhm5AF9A0mKO7doF5V7nRX7SwARAQABiQIlBBgBCgAPBQJX\n" +
+                        "om9xAhsMBQkHhh+AAAoJELx+U81kjMfRaKYP/RlZrsOnlXWdmEaODF4XJF6Vbkw0\n" +
+                        "8DwjvTzfbgV8CHjqgfKNMOroEPPlbE+ECTo/n2PcMaUp/QcvPysI2fD6BTt3r6et\n" +
+                        "ce++XDpbLpIAaeDqimsz9OBkR9GFHn0J4R6fmudpGRfKtXZ9rvLtTICA/zWmTi5d\n" +
+                        "cWbrp3X1sDDeF1aau8BF7gyoRogn60xDWW0MAqR6PGxKk9ogYoFB4RRxQ7IXAsnK\n" +
+                        "sSMina+K/ElFSg4+OPVoRxNQIWPDVz43qca6E5BMdhd+wT7AN+nmHBp8xD8HGNND\n" +
+                        "MmszTR8dmKifhbCNggCc0Ds1OzvNQIQxQmHx+o1JJ2Y/ypBIiX1CtTCQ9hRi5+CM\n" +
+                        "oYJYWfKamgq6AhUNV5iCM+e+MZHvM+YQnRKbC6fUhpfXK96z9AtKNIrjxbC0w4+E\n" +
+                        "YLIxQBP+AEAoYTi/Gh3/ehQnyl3a27cyMX4MrziaW5bsOvKM093yw6F4BM2fOzF+\n" +
+                        "2vHykU3VoA6ngd8F6vos24183kODKhTxwuFttJ/aeSkQzR8emIWgNKSp9ZMZ3fza\n" +
+                        "m7e19VPxECtTDknf3xZG2evXaJhKEsM7b4+v/Bh7FGdHtE3JDOj310HYYyiwCrPF\n" +
+                        "WsBKnSG92+aHKnRvpY46nv6Q6Xme3ubJ+MHh/Gzp+gw/2YFGmUQ+15MGX+Ffw3g5\n" +
+                        "hV0iBh194MuetLdW\n" +
+                        "=GSGg\n" +
+                        "-----END PGP PUBLIC KEY BLOCK-----"
                 //Optional. The passphrase for GPG signing'
             }
         }
