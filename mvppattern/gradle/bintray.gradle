@@ -2,11 +2,11 @@ ext {
     tagVersion = (System.env.TRAVIS_TAG != null && !System.env.TRAVIS_TAG.isEmpty()) ? System.getenv().getOrDefault('TRAVIS_TAG', '0.0.1') : '0.0.1'
 
     bintrayRepo = 'maven'
-    bintrayName = 'mvp_patterns'
+    bintrayName = 'MVP-Pattern'
 
     publishedGroupId = 'com.github.tehras'
     libraryName = 'MVPPatterns'
-    artifact = 'mvp-patterns'
+    artifact = 'mvppattern'
 
     libraryDescription = 'MVP Base Classes with Dagger'
 
