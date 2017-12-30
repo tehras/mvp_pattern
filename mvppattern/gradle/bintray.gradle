@@ -2,16 +2,16 @@ ext {
     tagVersion = (System.env.TRAVIS_TAG != null && !System.env.TRAVIS_TAG.isEmpty()) ? System.getenv().getOrDefault('TRAVIS_TAG', '0.0.1') : '0.0.1'
 
     bintrayRepo = 'maven'
-    bintrayName = 'loading-skeleton'
+    bintrayName = 'mvp_patterns'
 
     publishedGroupId = 'com.github.tehras'
-    libraryName = 'LoadkingSkeleton'
-    artifact = 'loading-skeleton'
+    libraryName = 'MVPPatterns'
+    artifact = 'mvp-patterns'
 
-    libraryDescription = 'Facebook-like Android View  library'
+    libraryDescription = 'MVP Base Classes with Dagger'
 
-    siteUrl = 'https://github.com/tehras/LoadingSkeleton'
-    gitUrl = 'https://github.com/tehras/LoadingSkeleton.git'
+    siteUrl = 'https://github.com/tehras/mvp_pattern'
+    gitUrl = 'https://github.com/tehras/mvp_pattern.git'
 
     libraryVersion = "$tagVersion"
 
