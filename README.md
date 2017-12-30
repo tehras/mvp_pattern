@@ -1,4 +1,3 @@
-# mvp_pattern
 # MVP-Pattern
 [![Build Status](https://travis-ci.org/tehras/mvp_pattern.svg?branch=master)](https://travis-ci.org/tehras/mvp_pattern)
 
