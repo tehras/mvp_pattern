@@ -1,0 +1,21 @@
+ext {
+    support_lib_version = '27.0.2'
+    rx_java = '2.0.+'
+    dagger = '2.10'
+}
+
+// Required for annotation processing plugins like Dagger
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_java"
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rx_java" // for kotlin
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+}
