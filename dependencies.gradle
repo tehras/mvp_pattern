@@ -6,9 +6,10 @@ ext {
 
 
 // Required for annotation processing plugins like Dagger
-kapt {
-    generateStubs = true
-}
+apply plugin: 'kotlin-kapt'
+//kapt {
+//    generateStubs = true
+//}
 
 dependencies {
     // RxJava

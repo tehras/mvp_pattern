@@ -28,8 +28,6 @@ android {
     compileSdkVersion 27
     buildToolsVersion "27.0.2"
 
-    resourcePrefix 'mvp_pattern'
-
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
