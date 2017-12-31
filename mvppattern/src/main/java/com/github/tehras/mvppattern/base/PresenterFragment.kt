@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.support.annotation.CallSuper
 import android.support.v4.app.LoaderManager
 import android.support.v4.content.Loader
+import com.github.tehras.mvppattern.rx.MvpComponent
 import javax.inject.Inject
 import javax.inject.Provider
 
-abstract class PresenterFragment<V : MvpView, T : Presenter<V>> : BaseFragment(),
-        LoaderManager.LoaderCallbacks<T> {
+abstract class PresenterFragment<V : MvpView, T : Presenter<V>, in M : MvpComponent> : BaseFragment<M>(), LoaderManager.LoaderCallbacks<T> {
 
     private val LOADER_ID = 1
     protected lateinit var presenter: T
