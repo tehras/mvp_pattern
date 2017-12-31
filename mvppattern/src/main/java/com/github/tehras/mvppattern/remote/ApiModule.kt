@@ -1,5 +1,6 @@
 package com.github.tehras.mvppattern.remote
 
+import android.util.Log
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -16,6 +17,7 @@ abstract class ApiModule<T> {
      * Override if 5 seconds is too short
      */
     protected val connectionTimeout = 5000L
+    protected var logEnabled = false
 
     @Provides
     @Singleton
@@ -27,7 +29,7 @@ abstract class ApiModule<T> {
     /**
      * Use this to add custom headers
      */
-    protected fun Request.Builder.addHeaders() {}
+    protected open fun Request.Builder.addHeaders() {}
 
     @Provides
     @Singleton
@@ -40,16 +42,27 @@ abstract class ApiModule<T> {
                 .build()
     }
 
+    private fun log(message: String, throwable: Throwable? = null) {
+        if (logEnabled) {
+            if (throwable != null)
+                Log.e("HttpRequest", message, throwable)
+            else
+                Log.d("HttpRequest", message)
+        }
+    }
+
     /**
      * Override for custom actions
      */
-    protected fun okHttpClient(): OkHttpClient {
+    protected open fun okHttpClient(): OkHttpClient {
         return OkHttpClient.Builder().addNetworkInterceptor {
             val newRequest = it.request().newBuilder()
                     .apply {
                         this.addHeaders()
                     }
                     .build()
+
+            log("request being sent to ${newRequest.url()}")
 
             return@addNetworkInterceptor it.proceed(newRequest)
         }
