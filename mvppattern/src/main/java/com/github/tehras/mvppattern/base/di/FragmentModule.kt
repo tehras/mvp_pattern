@@ -1,6 +1,5 @@
 package com.github.tehras.mvppattern.base.di
 
-import android.content.Context
 import android.support.v4.app.Fragment
 import com.github.tehras.mvppattern.FragmentScope
 import dagger.Module
@@ -12,8 +11,4 @@ abstract class FragmentModule(private val fragment: Fragment) {
     @Provides
     @FragmentScope
     fun provideFragment(): Fragment = fragment
-
-    @Provides
-    @FragmentScope
-    fun provideFragmentContext(): Context? = fragment.activity
 }
