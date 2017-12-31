@@ -3,25 +3,40 @@ ext {
     rx_java = '2.0.+'
     dagger = '2.10'
     retrofit = '2.3.0'
+    room = '1.0.0'
 }
 
 // Required for annotation processing plugins like Dagger
 apply plugin: 'kotlin-kapt'
-//kapt {
-//    generateStubs = true
-//}
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$support_lib_version"
+    implementation "com.android.support:design:$support_lib_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
     // RxJava
     implementation "io.reactivex.rxjava2:rxandroid:$rx_java"
     implementation "io.reactivex.rxjava2:rxjava:$rx_java"
     implementation "io.reactivex.rxjava2:rxkotlin:$rx_java" // for kotlin
 
+    // Retrofit for Networking
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
 
+    // Room
+    implementation "android.arch.persistence.room:runtime:$room"
+    implementation "android.arch.persistence.room:rxjava2:$room"
+    kapt "android.arch.persistence.room:compiler:$room"
+
     // Dagger 2
     implementation "com.google.dagger:dagger:$dagger"
     kapt "com.google.dagger:dagger-compiler:$dagger"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
 }

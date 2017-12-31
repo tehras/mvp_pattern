@@ -1,6 +1,6 @@
 apply from: file('gradle/bintray.gradle')
 // Place it at the end of the file
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: file('gradle/maven-install.gradle')
 apply from: file('gradle/bintray-upload.gradle')
 
 task buildAndDeploy {
