@@ -9,14 +9,7 @@
 
 // Define the version you want to be on
 ext {
-    mvp_starter = '0.0.7'
-}
-
-repositories {
-    maven {
-        // Requires until while jcenter is not approved
-        url  "https://dl.bintray.com/tehras/maven" 
-    }
+    mvp_starter = '0.0.9'
 }
       
 dependencies {    
