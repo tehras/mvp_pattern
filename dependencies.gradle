@@ -1,5 +1,5 @@
 ext {
-    support_lib_version = '27.0.2'
+    support_lib_version = '27.1.0'
     rx_java = '2.0.+'
     dagger = '2.10'
     retrofit = '2.3.0'
