@@ -8,11 +8,14 @@ import com.github.tehras.mvppattern.rx.MvpComponent
 import javax.inject.Inject
 import javax.inject.Provider
 
+@Suppress("MemberVisibilityCanBePrivate")
 abstract class PresenterFragment<V : MvpView, T : Presenter<V>, in M : MvpComponent> : BaseFragment<M>(), LoaderManager.LoaderCallbacks<T> {
 
-    private val LOADER_ID = 1
+    companion object {
+        private const val LOADER_ID = 1
+    }
     protected lateinit var presenter: T
-    protected var isViewBindCompleted: Boolean = false
+    private var isViewBindCompleted: Boolean = false
 
     // Boolean flag to avoid delivering the Presenter twice. Calling initLoader in onActivityCreated means
     // onLoadFinished will be called twice during configuration change.
@@ -72,7 +75,7 @@ abstract class PresenterFragment<V : MvpView, T : Presenter<V>, in M : MvpCompon
         return this as V
     }
 
-    override fun onLoadFinished(loader: Loader<T>?, presenter: T) {
+    override fun onLoadFinished(loader: Loader<T>, presenter: T) {
         if (!delivered) {
             onPresenterProvided(presenter)
             delivered = true
@@ -83,7 +86,7 @@ abstract class PresenterFragment<V : MvpView, T : Presenter<V>, in M : MvpCompon
         return presenterLoaderProvider.get()
     }
 
-    override fun onLoaderReset(loader: Loader<T>?) {
+    override fun onLoaderReset(loader: Loader<T>) {
         onPresenterDestroyed()
     }
 }

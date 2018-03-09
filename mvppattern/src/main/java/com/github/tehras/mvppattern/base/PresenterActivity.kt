@@ -56,7 +56,7 @@ abstract class PresenterActivity<V : MvpView, T : Presenter<V>, in C : MvpCompon
         supportLoaderManager.initLoader<T>(LOADER_ID, null, this)
     }
 
-    override fun onLoadFinished(loader: Loader<T>?, presenter: T) {
+    override fun onLoadFinished(loader: Loader<T>, presenter: T) {
         onPresenterProvided(presenter)
     }
 
@@ -64,7 +64,7 @@ abstract class PresenterActivity<V : MvpView, T : Presenter<V>, in C : MvpCompon
         return presenterLoaderProvider.get()
     }
 
-    override fun onLoaderReset(loader: Loader<T>?) {
+    override fun onLoaderReset(loader: Loader<T>) {
         onPresenterDestroyed()
     }
 
