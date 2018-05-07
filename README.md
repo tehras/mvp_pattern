@@ -9,7 +9,7 @@
 
 // Define the version you want to be on
 ext {
-    mvp_starter = '0.0.18'
+    mvp_starter = '0.0.19'
 }
       
 dependencies {    
